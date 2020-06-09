@@ -3,9 +3,13 @@
 
 At the moment, this is an ongoing work as I am organising the final versions of my code before uploading them. 
 
-**Finalised foders** - ColorClustering
+**Finalised foders** 
 
-**To be added**  - Reconstruction of 3D geometry using machine learning techniques
+                 - ColorClustering
+
+**To be added**  
+                
+                 - Reconstruction of 3D geometry using machine learning techniques
 
                  - Image based modelling of microstructural connections in upper chambers of heart
                  
