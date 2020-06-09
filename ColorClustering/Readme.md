@@ -6,4 +6,4 @@ https://belsys.shinyapps.io/AppDir/
 
 Short description of project :   A novel approach is developed to implement the popular k-means clustering in the presence of extreme class imbalance.
  
-For a detailed description of the project:    See the pdf 'Thesis_chapter5.pdf'
+For a detailed description of the project:    email me for a copy of thesis chapter btho733@aucklanduni.ac.nz
