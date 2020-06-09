@@ -5,5 +5,8 @@ At the moment, this is an ongoing work as I am organising the final versions of 
 
 **Finalised foders** - ColorClustering
 
-**To be added**      - Reconstruction of 3D geometry using machine learning techniques
-                 - 
+**To be added**  - Reconstruction of 3D geometry using machine learning techniques
+
+                 - Image based modelling of microstructural connections in upper chambers of heart
+                 
+                 - Segmentation of tissue types
