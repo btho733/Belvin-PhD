@@ -1,0 +1,12 @@
+name: AppDir
+title: AppDir
+username:
+account: belsys
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2228580
+bundleId: 3212449
+url: https://belsys.shinyapps.io/AppDir/
+when: 1590981497.32848
+asMultiple: FALSE
+asStatic: FALSE
