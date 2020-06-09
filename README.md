@@ -5,12 +5,12 @@ At the moment, this is an ongoing work as I am organising the final versions of 
 
 **Finalised foders** 
 
-                 - ColorClustering
+                 - ColorClustering (R shiny app for color-based clustering)
 
 **To be added**  
                 
-                 - Reconstruction of 3D geometry using machine learning techniques
+                 - 3D_Reconstruction (Reconstruction of 3D geometry using machine learning techniques)
 
-                 - Image based modelling of microstructural connections in upper chambers of heart
+                 - Modelling_Results (Image based modelling of microstructural connections in upper chambers of heart)
                  
-                 - Segmentation of tissue types
+                 - TissueSegmentation (Segmentation of tissue types)
