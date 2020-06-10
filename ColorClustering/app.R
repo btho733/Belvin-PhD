@@ -100,24 +100,9 @@ tags$u("The figure showing ",tags$strong("color distribution in 3 color spaces (
 
 server <- function(input, output, session) {
   
-  # A plot of fixed size
-  # output$plot1 <- renderImage({
-  #   # A temp file to save the output. It will be deleted after renderImage
-  #   # sends it, because deleteFile=TRUE.
-  #   filename <- normalizePath(file.path('./images',
-  #                                     paste('image', input$n, '.png', sep='')))
-  #   
-  #   # Generate a png
-  #   png(filename, width=400, height=400)
-  #   
-  #   # Return a list
-  #   list(src = filename,
-  #        alt = "This is alternate text")
-  # }, deleteFile = TRUE)
-  
+    
   output$plot0 <- renderImage({
-    # When input$n is 1, filename is ./images/image1.jpeg
-    #C:/Users/belvi/Downloads/study/Matlab_codes/c03_unsegmented_geometry/scale10
+   
     original <- normalizePath(file.path('./images/original',
                                         paste('s10_', sprintf("%05d",strtoi(input$n)), '.png', sep='')))
     
@@ -132,9 +117,7 @@ server <- function(input, output, session) {
   }, deleteFile = FALSE)
   
   output$plot1 <- renderImage({
-    # When input$n is 1, filename is ./images/image1.jpeg
-    #C:/Users/belvi/Downloads/study/Matlab_codes/d03_segmented_geometry/scale10
-    filename <- normalizePath(file.path('./images/geo',
+     filename <- normalizePath(file.path('./images/geo',
                                         paste('seg_', sprintf("%05d",strtoi(input$n)), '.png', sep='')))
 
     width  <- session$clientData$output_plot1_width
@@ -164,7 +147,6 @@ server <- function(input, output, session) {
   height=function() 0.75*session$clientData$output_plot2_height)
   
   output$plot3 <- renderImage({
-    #C:/Users/belvi/Downloads/study/Matlab_codes/kmeans_out_merged
     segname <- normalizePath(file.path('./images/seg',
                                         paste('Im_', sprintf("%05d",strtoi(input$n)), '.png', sep='')))
     
@@ -186,17 +168,6 @@ server <- function(input, output, session) {
    Local_Fibrosis <- mavgfib[83:1011]
    Local_Myocytes <- mavgtiss[83:1011]
    Local_Fat <- mavgfat[83:1011]
-  #  plot(percentcsv$V4[83:1001],type="l", col=colors()[142], lwd=1.5, ylim=range(0,100), xlab="Slice Number", ylab="Percentage", font.lab=2, cex.lab=1.2,main="Slice-wise quantification of atrial tissue types")
-  #  lines(percentcsv$V3[83:1001],type = "l",col=colors()[50],lwd=1.5)
-  #  lines(percentcsv$V2[83:1001],type = "l",col=colors()[84],lwd=1.5)
-  #  mavgfib=roll_mean(percentcsv$V2,40,fill=0)
-  #  mavgtiss=roll_mean(percentcsv$V3,40,fill=0)
-  #  mavgfat=roll_mean(percentcsv$V4,40,fill=0)
-  #  lines(mavgfib[83:1001],type = "l",col="black",lwd=1)
-  # lines(mavgfat[83:1001],type = "l",col="black",lwd=1)
-  # lines(mavgtiss[83:1001],type = "l",col="black",lwd=1)
-  # 
-  #  legend(400,98,c("Fibrosis","Myocytes","Fat", "Local trend"), lwd=c(2,2,2,2), col=colors()[c(84,50,142,24)], bty="n")
    Slice <- data1$V1 
    Fibrosis <- data1$V2
    Myocytes <- data1$V3
@@ -219,8 +190,7 @@ server <- function(input, output, session) {
    
     ggplotly(p1)
    },
-  # height=function() session$clientData$output_plot4_height
-  )
+ )
 
    output$plot5 <- renderPlotly({
     percentcsv <- round(read.csv("./images/percent_CollTissFat_merged.csv",header=F),2)
@@ -249,42 +219,13 @@ server <- function(input, output, session) {
          axis.title.y = element_text(color="black", size=10, face="bold")
        )
     ggplotly(p2)
-     # legend(600,97,c("Fibrosis","Myocytes","Fat"), lwd=c(2,2,2), col=colors()[c(84,50,142)])
-   },
-  # # # height=function() 0.97*session$clientData$output_plot5_height
-   )
-  #
-  
-  # output$plot3 <- renderPlot({
-  #   # When input$n is 1, filename is ./images/image1.jpeg
-  #   labelfile <- normalizePath(file.path('C:/Users/belvi/Downloads/study/Matlab_codes/kmeans_out/',
-  #                                       paste('label_', sprintf("%05d",strtoi(input$n)), '.mat', sep='')))
-  # 
-  #   # D:/hpc_ABI_20Mar20/ABI/JZ/Fiber_DTI/Whole_Atria/Final_Fiber_Set_rgby/d03_Geometrysegmented_iso1
-  #   # Return a list containing the filename
-  #   labelmat<- readMat(labelfile)
-  #   label <- matrix(unlist(labelmat), ncol = 4140)
-  #     bgd_coords <- which(label==1, arr.ind=T)
-  #     fib_coords <- which(label==2, arr.ind=T)
-  #     tis_coords <- which(label==3, arr.ind=T)
-  #     fat_coords <- which(label==4, arr.ind=T)
-  #     plot(fib_coords[,2],fib_coords[,1], ylim = rev(range(fib_coords[,1])), pch=1, cex=0.1,col=colors()[84],axes=F, xlab='',ylab='')
-  #     points(tis_coords[,2],tis_coords[,1], ylim = rev(range(tis_coords[,1])), pch=1, cex=0.1,col=colors()[81])
-  #     points(fat_coords[,2],fat_coords[,1], ylim = rev(range(fat_coords[,1])), pch=1, cex=0.01,col=colors()[142])
-  #     title('Segmented tissue types')},width = 420, height = 360)
-  # #   image(t(apply(output,2,rev)), useRaster=TRUE, axes=FALSE, col = colors()[c(1,84,50,142)])
-  # #   list(src = segfile,
-  # #        width=320,
-  # #        height=240)
-  # # }, deleteFile = FALSE)
+     
 }
 
 
 shinyApp(ui = ui, server = server)
 
 
-# For reading mat files
-# uab<- readMat("uab_00450.mat")
-# col1<-uab$uab[,1]
+
 
 
