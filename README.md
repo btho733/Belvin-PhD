@@ -3,7 +3,7 @@
 
 At the moment, this is an ongoing work as I am organising the final versions of my code before uploading them. 
 
-**Finalised foders** 
+**Finalised folders** 
 
                  - ColorClustering (R shiny app for color-based clustering)
 
@@ -13,4 +13,4 @@ At the moment, this is an ongoing work as I am organising the final versions of 
 
                  - Modelling_Results (Image based modelling of microstructural connections in upper chambers of heart)
                  
-                 - TissueSegmentation (Segmentation of tissue types)
+                 - Tissue_Segmentation (Segmentation of tissue types)
