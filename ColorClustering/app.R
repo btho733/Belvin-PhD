@@ -1,8 +1,26 @@
+# This is an app that shows the data, methods and results of a color based clustering strategy developed to address the class imbalance problem.
+# 
+# To go to the web-app : Click on the link given below
+# https://belsys.shinyapps.io/AppDir/
+# 
+# Short description of project : 
+# A novel approach has been developed to implement the popular k-means clustering in the presence of extreme 
+# class imbalance. After clustering all the slices in a 3D stack of images into 3 groups (fibrosis, myocytes and fat), the slice-wise distribution
+# of these tissue types is analysed. Significant regions are located from the bumps in the plotly graph. These sites are then used for further 
+# analysis. Additionally, the proportion of tissue types in the selected slice is compared with the regional and overall proportions. 
+# See the Implememtation details tab in the app for more info.
+# 
+# For a detailed description of the project: 
+# Email me for a copy of thesis chapter btho733@aucklanduni.ac.nz
+# 
+# Author : Belvin Thomas
+
 library(shiny)
 library(R.matlab)
 library(RcppRoll)
 library(ggplot2)
 library(plotly)
+
 ui <- fluidPage(
   # navbarPage(title= span(h3("Color based clustering of imbalanced classes (Quantification of atrial fibrosis)"),
                   # style = "background-color: #DEEBF7;color: black"),windowTitle="Color based clustering for imbalanced classes",
@@ -106,7 +124,7 @@ server <- function(input, output, session) {
     original <- normalizePath(file.path('./images/original',
                                         paste('s10_', sprintf("%05d",strtoi(input$n)), '.png', sep='')))
     
-    # D:/hpc_ABI_20Mar20/ABI/JZ/Fiber_DTI/Whole_Atria/Final_Fiber_Set_rgby/d03_Geometrysegmented_iso1
+    
     width  <- session$clientData$output_plot0_width
     height <- 0.7*session$clientData$output_plot0_width
     # Return a list containing the filename
@@ -130,7 +148,7 @@ server <- function(input, output, session) {
   }, deleteFile = FALSE)
   
   output$plot2 <- renderPlot({
-    #C:/Users/belvi/Downloads/study/Matlab_codes/uab
+    
   uabfile <- normalizePath(file.path('./images/uab',
                                      paste('uab_', sprintf("%05d",strtoi(input$n)), '.mat', sep='')))
   # For reading mat files
@@ -218,8 +236,8 @@ server <- function(input, output, session) {
          axis.text.y = element_text(color="black", size=10, face="plain"),
          axis.title.y = element_text(color="black", size=10, face="bold")
        )
-    ggplotly(p2)
-     
+    ggplotly(p2)})
+   
 }
 
 
