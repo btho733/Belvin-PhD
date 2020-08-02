@@ -25,9 +25,10 @@ It is selected to perform filtering and display results.
 
 APPLICATION & SIGNIFICANCE
 **************************
-The noise being removed here affects any gradient-based operation on 3D stacks negatively. For instance, it distorts
-the orientation results computed using structure tensor. These effects are studied in greater detail during the
-computation of atrial fiber orientation. See chapter 6 of my thesis for more info.
+This filter selectively removes a typical noise present in 3D image stacks that derails any gradient-based operation on them. For instance, this noise distorts the orientation results computed using structure tensor. Although, 3D version of this filter introduces mild blurring effect, 
+the required gradient information is preserved well across the image volume.
+
+These effects are studied in greater detail during the computation of atrial fiber orientation. See chapter 6 of my thesis for more info.
 
 Author : Belvin Thomas (Part of PhD project)
 """

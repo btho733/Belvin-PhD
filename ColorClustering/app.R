@@ -12,7 +12,7 @@
 # selected slice is compared with the regional and overall proportions. See the Implememtation details tab in the app 
 # for more info.
 #
-# For a detailed description of the project:
+# For a detailed documentation of the project:
 # Email me for a copy of thesis chapter btho733@aucklanduni.ac.nz
 #
 # Author : Belvin Thomas
