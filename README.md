@@ -10,8 +10,7 @@ At the moment, this is an ongoing work as I am organising the final versions of 
 **In progress**  
                 
                  - 3D_Reconstruction (Reconstruction of 3D geometry using machine learning techniques)
-		 
-		 - Modelling_Results (Image based modelling of microstructural connections in upper chambers of heart)
+		     - Modelling_Results (Image based modelling of microstructural connections in upper chambers of heart)
 				 
 **To be added later**  
                 
