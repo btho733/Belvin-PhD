@@ -10,7 +10,7 @@ HOW TO RUN AND INTERPRET THE OUTPUT
 Run the script and observe the images popping up. After observing one image, close it to allow the next image to pop up.
 Images before filtering and those getting filtered (in multiple steps) are shown in sequence.
 The original image (matplotlib image) and first order gradient image (opencv image) are displayed for each case.
-First 2 images are the UNFILTERED IMAGES (See the VERTICAL STRIATIONS that need to be filtered out).
+First 2 images are the UNFILTERED IMAGES (See the STRIATIONS that need to be filtered out).
 Those getting filtered (in multiple steps) follow the sequence.
 
 Compare the final output images against the unfiltered ones to see the effect of filtering.
@@ -63,7 +63,7 @@ sobely = cv2.Sobel(yplane, cv2.CV_64F, 0, 1)
 
 # Display the Unfiltered images (First, the original image and then its gradient image)
 plt.imshow(yplane, 'summer', aspect=100/130)
-plt.title('Original image(Before Filtering): See the VERTICAL STRIATIONS to be filtered')
+plt.title('Original image(Before Filtering): See the STRIATIONS to be filtered')
 plt.show()
 grad_yplane = np.sqrt(sobelx ** 2.0 + sobely ** 2.0)
 maxVal = np.amax(grad_yplane)
