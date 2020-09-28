@@ -83,8 +83,8 @@ m2 = np.zeros([Nx, 1])
 diff = np.zeros([Nx, 1])
 corrected_r = np.zeros([Nx, Nz, 8])
 
-for num in range(1, 10):
-    r = num * 2 + 1
+for r in range(1, 10):
+    dia = r * 2 + 1
     for column in range(upto):
         if column == 0:
             im1[:, 0] = yplane[:, column]
@@ -92,8 +92,8 @@ for num in range(1, 10):
         else:
             im1[:, 0] = corrected_2[:, column]
             im1[:, 1] = yplane[:, column + 1]
-        m1 = st.movmean(im1[:, 0], windowsize=r, lag='centered')
-        m2 = st.movmean(im1[:, 1], windowsize=r, lag='centered')
+        m1 = st.movmean(im1[:, 0], windowsize=dia, lag='centered')
+        m2 = st.movmean(im1[:, 1], windowsize=dia, lag='centered')
         diff = m1 - m2
         corrected_2[:, column] = (im1[:, 1] + diff).T
     # corrected_r[:, :, num]=corrected_2
